@@ -1,1 +1,1 @@
-from . import bearing_capacity
+from soilstat.bearing_capacity import *
