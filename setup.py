@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+print(find_packages())
 setup(
     name="soilstat",
     use_scm_version=True,
