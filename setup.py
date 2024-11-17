@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-print(find_packages())
+print(find_packages(include=["soilstat", "soilstat.*"]))
 setup(
     name="soilstat",
     use_scm_version=True,
@@ -11,7 +11,9 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/nubufi/soilstat",
-    packages=find_packages(),  # Automatically find packages in the directory
+    packages=find_packages(
+        include=["soilstat", "soilstat.*"]
+    ),  # Automatically find packages in the directory
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
