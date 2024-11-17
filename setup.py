@@ -10,7 +10,6 @@ def get_version_from_git():
             .strip()
             .decode("utf-8")
         )
-        print(version)
         # Process the tag if it has additional information, like a commit hash
         if version.startswith("v"):
             version = version[1:]
