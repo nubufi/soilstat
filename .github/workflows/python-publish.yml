@@ -24,8 +24,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
@@ -41,20 +39,3 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-  release:
-    # Specify that this job depends on the `deploy` job to complete successfully
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Create GitHub Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref_name }}  # Use the tag that triggered the workflow
-        release_name: Release ${{ github.ref_name }}  # Set the release name to the tag name
-        draft: false  # Set to true if you want to create a draft release
-        prerelease: false  # Set to true if this is a prerelease
