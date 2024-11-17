@@ -24,6 +24,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: List project files
+      run: |
+        ls -R  # List all files in the repository to confirm structure
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
