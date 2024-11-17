@@ -11,9 +11,8 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nubufi/soilstat",
     packages=find_packages(
-        where="soilstat"
+        include=["soilstat", "soilstat.*"]
     ),  # Automatically find packages in the directory
-    package_dir={"": "soilstat"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
