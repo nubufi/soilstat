@@ -19,14 +19,14 @@ def get_version_from_git():
 
 
 setup(
-    name="pysoil",
+    name="soilstat",
     version=get_version_from_git(),
     author="Numan Burak Fidan",
     author_email="numanburakfidan@yandex.com",
     description="A toolbox for geotechnical engineering calculations",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/nubufi/pysoil",
+    url="https://github.com/nubufi/soilstat",
     packages=find_packages(),  # Automatically find packages in the directory
     classifiers=[
         "Programming Language :: Python :: 3",
