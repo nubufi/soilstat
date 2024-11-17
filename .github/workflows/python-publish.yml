@@ -8,9 +8,11 @@
 
 name: Upload Python Package
 
+
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"  # Only triggers on tags that start with "v"
 
 permissions:
   contents: read
