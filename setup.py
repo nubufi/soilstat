@@ -20,7 +20,8 @@ def get_version_from_git():
 
 setup(
     name="soilstat",
-    version=get_version_from_git(),
+    use_scm_version=True,
+    setup_requires=["setuptools_scm"],
     author="Numan Burak Fidan",
     author_email="numanburakfidan@yandex.com",
     description="A toolbox for geotechnical engineering calculations",
