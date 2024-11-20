@@ -1,0 +1,7 @@
+scan.sh
+.venv
+.coverage
+coverage.xml
+.pytest_cache
+.scannerwork
+**/__pycache__/*

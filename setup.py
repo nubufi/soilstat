@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-print(find_packages(include=["soilstat", "soilstat.*"]))
 setup(
     name="soilstat",
     use_scm_version=True,
