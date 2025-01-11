@@ -1,3 +1,4 @@
+#pyrightconfig.json
 scan.sh
 .venv
 .coverage
