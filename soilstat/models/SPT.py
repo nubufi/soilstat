@@ -5,7 +5,7 @@ from soilstat.models.soil_profile import SoilLayer
 
 
 @dataclass
-class SptExp:
+class SPTExp:
     """
     Represents an SPT (Standard Penetration Test) experiment with various parameters.
     """
@@ -22,12 +22,12 @@ class SptExp:
     beta: float = 0
 
 
-class SPT:
+class SPTLog:
     """
     Represents a collection of SPT experiments and associated correction factors.
     """
 
-    exps: List[SptExp] = field(default_factory=list)
+    exps: List[SPTExp] = field(default_factory=list)
     energy_correction_factor: float = 1.0
     diameter_correction_factor: float = 1.0
     sampler_correction_factor: float = 1.0
@@ -35,7 +35,7 @@ class SPT:
 
     def __init__(
         self,
-        exps: List[SptExp],
+        exps: List[SPTExp],
         energy_correction_factor: float = 0,
         diameter_correction_factor: float = 0,
         sampler_correction_factor: float = 0,
@@ -58,3 +58,10 @@ class SPT:
         """
         # Implement later
         return 0
+
+    def get_exp_at_depth(self, depth: float) -> SPTExp:
+        for i, exp in enumerate(self.exps):
+            if exp.depth >= depth:
+                return self.exps[i - 1]
+
+        return self.exps[-1]
